@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - MONCHUSI and KILELO Mining and Enterprise</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #f8f9fa;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 51, 102, 0.95);
+            padding: 1rem 5%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #FFA500;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #FFA500;
+        }
+
+        /* Page Header */
+        .page-header {
+            height: 50vh;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(0, 102, 204, 0.85)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23003366" width="1200" height="800"/><g fill="%23004080" opacity="0.3"><circle cx="200" cy="150" r="100"/><circle cx="900" cy="600" r="150"/><circle cx="1100" cy="200" r="80"/><circle cx="300" cy="700" r="120"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+
+        .page-header-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #003366;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #FFA500;
+            border-radius: 2px;
+        }
+
+        /* Services Overview */
+        .services-overview {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .overview-text {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .overview-text p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 5px solid #003366;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-top-color: #FFA500;
+        }
+
+        .service-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, #003366, #0066cc);
+            color: white;
+            text-align: center;
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-body {
+            padding: 2.5rem;
+        }
+
+        .service-body p {
+            margin-bottom: 1.5rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 0.7rem 0;
+            padding-left: 2rem;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #FFA500;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .service-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .service-btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: #FFA500;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #FFA500;
+        }
+
+        .service-btn:hover {
+            background: transparent;
+            color: #FFA500;
+        }
+
+        /* Industries Section */
+        .industries {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #003366, #0066cc);
+            color: white;
+            position: relative;
+        }
+
+        .industries::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><g fill="white" opacity="0.05"><circle cx="100" cy="100" r="50"/><circle cx="1000" cy="700" r="80"/><circle cx="500" cy="400" r="60"/></g></svg>');
+            background-size: cover;
+        }
+
+        .industries .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .industries .section-title {
+            color: white;
+        }
+
+        .industries .section-title::after {
+            background: #FFA500;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .industry-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .industry-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #FFA500;
+        }
+
+        .industry-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .industry-card p {
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #003366;
+            z-index: 1;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: #003366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .process-step:hover .step-number {
+            background: #FFA500;
+            transform: scale(1.1);
+        }
+
+        .step-content h3 {
+            color: #003366;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .step-content p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #003366, #0066cc);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #FFA500;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 165, 0, 0.6);
+            background: #ff8c00;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid white;
+        }
+
+        .cta-button.secondary:hover {
+            background: white;
+            color: #003366;
+        }
+
+        /* Footer */
+        footer {
+            background: #003366;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                flex-direction: column;
+                gap: 3rem;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">MONCHUSI <span>KILELO</span></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" style="color: #FFA500;">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Our Services</h1>
+            <p>Comprehensive mining, industrial, and construction solutions tailored to meet your specific needs</p>
+        </div>
+    </section>
+
+    <section class="services-overview">
+        <div class="container">
+            <div class="overview-text">
+                <p>MONCHUSI and KILELO Mining and Enterprise offers a comprehensive range of specialized services designed to meet the diverse needs of our clients in the mining, industrial, and construction sectors. With our commitment to excellence and reliability, we deliver high-quality solutions that drive success.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Core Mining Services -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">⛏️</div>
+                        <h3>Core Mining Services</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Efficient and sustainable mining operations tailored to industry standards. Our expertise ensures optimal resource extraction while maintaining the highest safety and environmental standards.</p>
+                        <ul class="service-features">
+                            <li>Mining operations management</li>
+                            <li>Resource extraction and processing</li>
+                            <li>Mine planning and development</li>
+                            <li>Safety compliance and protocols</li>
+                            <li>Environmental management systems</li>
+                            <li>Equipment operation and maintenance</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="service-btn">Inquire About This Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industrial Mining Supply -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🏭</div>
+                        <h3>Industrial Mining Supply</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Provision of top-quality equipment and materials to support mining operations. We ensure reliable supply chains and quality assurance for all your mining needs.</p>
+                        <ul class="service-features">
+                            <li>Equipment procurement and sourcing</li>
+                            <li>Material supply and logistics</li>
+                            <li>Supply chain management</li>
+                            <li>Quality assurance and control</li>
+                            <li>Technical support and maintenance</li>
+                            <li>Inventory management solutions</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="service-btn">Inquire About This Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commercial & Industrial Cleaning -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🧹</div>
+                        <h3>Commercial & Industrial Cleaning</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Professional cleaning services to maintain safe and hygienic environments. Our comprehensive cleaning solutions cater to various industrial and commercial settings.</p>
+                        <ul class="service-features">
+                            <li>Facility maintenance and cleaning</li>
+                            <li>Industrial area sanitation</li>
+                            <li>Waste management services</li>
+                            <li>Specialized equipment cleaning</li>
+                            <li>Hazardous material handling</li>
+                            <li>Regular maintenance schedules</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="service-btn">Inquire About This Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Construction Services -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🏗️</div>
+                        <h3>Construction Services</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>From residential to industrial projects, delivering on time and within budget. Our construction expertise spans various project types and scales.</p>
+                        <ul class="service-features">
+                            <li>Project management and planning</li>
+                            <li>Construction project execution</li>
+                            <li>Quality control and assurance</li>
+                            <li>Budget management and cost control</li>
+                            <li>Timeline adherence and scheduling</li>
+                            <li>Site supervision and coordination</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="service-btn">Inquire About This Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paving and Flooring -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🧱</div>
+                        <h3>Paving and Flooring</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Specialized paving and flooring solutions for both commercial and private spaces. We deliver durable and aesthetically pleasing results.</p>
+                        <ul class="service-features">
+                            <li>Paving installation and repair</li>
+                            <li>Flooring solutions for various applications</li>
+                            <li>Surface preparation and leveling</li>
+                            <li>Finishing and sealing services</li>
+                            <li>Maintenance and restoration</li>
+                            <li>Custom design implementation</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="service-btn">Inquire About This Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plumbing Works -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🔧</div>
+                        <h3>Plumbing Works</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Reliable plumbing services for various construction projects. Our skilled plumbers ensure efficient and lasting solutions.</p>
+                        <ul class="service-features">
+                            <li>Pipe installation and repair</li>
+                            <li>Drainage system design and implementation</li>
+                            <li>Fixture installation and maintenance</li>
+                            <li>Preventive maintenance services</li>
+                            <li>Emergency plumbing repairs</li>
+                            <li>Water supply system optimization</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="service-btn">Inquire About This Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- General Building Construction -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🏢</div>
+                        <h3>General Building Construction</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Comprehensive building solutions for residential, commercial, and industrial needs. We handle projects from conception to completion.</p>
+                        <ul class="service-features">
+                            <li>Building construction and renovation</li>
+                            <li>Structural work and framework</li>
+                            <li>Finishing services and detailing</li>
+                            <li>Project coordination and management</li>
+                            <li>Regulatory compliance and permits</li>
+                            <li>Quality assurance throughout process</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="service-btn">Inquire About This Service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horticultural Services -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">🌿</div>
+                        <h3>Horticultural Services</h3>
+                    </div>
+                    <div class="service-body">
+                        <p>Landscaping and garden maintenance for public and private spaces. We create and maintain beautiful, sustainable outdoor environments.</p>
+                        <ul class="service-features">
+                            <li>Landscape design and implementation</li>
+                            <li>Garden maintenance and care</li>
+                            <li>Plant installation and nursery services</li>
+                            <li>Irrigation system design and maintenance</li>
+                            <li>Seasonal care and plant health</li>
+                            <li>Hardscape and softscape integration</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="service-btn">Inquire About This Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="industries">
+        <div class="container">
+            <h2 class="section-title">Industries We Serve</h2>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">⛏️</div>
+                    <h3>Mining</h3>
+                    <p>Comprehensive services for mining operations, from extraction to equipment supply and maintenance.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">🏭</div>
+                    <h3>Industrial</h3>
+                    <p>Solutions for industrial facilities including cleaning, maintenance, and supply chain management.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">🏗️</div>
+                    <h3>Construction</h3>
+                    <p>End-to-end construction services for residential, commercial, and industrial projects.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">🏢</div>
+                    <h3>Commercial</h3>
+                    <p>Services for commercial properties including maintenance, cleaning, and facility management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">Our Service Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Consultation</h3>
+                        <p>We begin with understanding your specific needs, challenges, and project requirements.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Planning</h3>
+                        <p>Our team develops a comprehensive plan tailored to your objectives and budget.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Execution</h3>
+                        <p>We implement the plan with precision, maintaining quality and adhering to timelines.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Delivery</h3>
+                        <p>We deliver completed projects that meet or exceed your expectations and requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Contact us today to discuss your mining, construction, or industrial service needs. Our team is ready to provide you with customized solutions that deliver results.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="cta-button">Get a Free Quote</a>
+                    <a href="tel:0792377578" class="cta-button secondary">Call Us Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MONCHUSI and KILELO Mining and Enterprise. All rights reserved.</p>
+            <p>Company Registration Number: 2023/512019/07 | SARS Tax Number: 9005221313</p>
+            <p>Level 1 B-BBEE Contributor | 135% Procurement Recognition | 100% Black Owned | 51% Black Female Owned</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(0, 51, 102, 1)';
+            } else {
+                nav.style.background = 'rgba(0, 51, 102, 0.95)';
+            }
+        });
+
+        // Service card animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards for animation
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

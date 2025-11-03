@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MONCHUSI and KILELO Mining and Enterprise</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #f8f9fa;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 51, 102, 0.95);
+            padding: 1rem 5%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #FFA500;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #FFA500;
+        }
+
+        /* Page Header */
+        .page-header {
+            height: 40vh;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(0, 102, 204, 0.85)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23003366" width="1200" height="800"/><g fill="%23004080" opacity="0.3"><circle cx="200" cy="150" r="100"/><circle cx="900" cy="600" r="150"/><circle cx="1100" cy="200" r="80"/><circle cx="300" cy="700" r="120"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+
+        .page-header-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #003366;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #FFA500;
+            border-radius: 2px;
+        }
+
+        /* Contact Main Section */
+        .contact-main {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        /* Contact Information */
+        .contact-info {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .contact-info h3 {
+            color: #003366;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #FFA500;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 2rem;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            background: #FFA500;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            color: #003366;
+            margin-bottom: 0.3rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-details p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .contact-details a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: #FFA500;
+            text-decoration: underline;
+        }
+
+        /* Business Details */
+        .business-details {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .business-details h4 {
+            color: #003366;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #003366;
+        }
+
+        .detail-value {
+            color: #555;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: linear-gradient(135deg, #003366, #0066cc);
+            padding: 3rem;
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h3 {
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: #FFA500;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #ff8c00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.4);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #003366, #0066cc);
+            color: white;
+        }
+
+        .map-section .section-title {
+            color: white;
+        }
+
+        .map-section .section-title::after {
+            background: #FFA500;
+        }
+
+        .map-container {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            height: 400px;
+        }
+
+        .map-placeholder {
+            height: 100%;
+            background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #003366;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .map-placeholder .map-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #FFA500;
+        }
+
+        .map-placeholder h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Quick Contact */
+        .quick-contact {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .quick-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .quick-contact-card {
+            background: #f8f9fa;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border-top: 5px solid #003366;
+        }
+
+        .quick-contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-top-color: #FFA500;
+        }
+
+        .quick-contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #003366;
+        }
+
+        .quick-contact-card h3 {
+            color: #003366;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .quick-contact-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .quick-contact-btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: #FFA500;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .quick-contact-btn:hover {
+            background: #ff8c00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #003366;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h4 {
+            color: #FFA500;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-column p, .footer-column a {
+            color: #ddd;
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #FFA500;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .quick-contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">MONCHUSI <span>KILELO</span></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" style="color: #FFA500;">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>Contact Us</h1>
+            <p>Get in touch with MONCHUSI and KILELO Mining and Enterprise for all your mining, industrial, and construction needs</p>
+        </div>
+    </section>
+
+    <section class="contact-main">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Physical Address</h4>
+                            <p>House no: J82<br>Mapoteng, 8447<br>Kathu, Northern Cape</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📮</div>
+                        <div class="contact-details">
+                            <h4>Postal Address</h4>
+                            <p>P.O. Box<br>Kathu, 8446</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🏢</div>
+                        <div class="contact-details">
+                            <h4>Business Address</h4>
+                            <p>House No. J83, Mapoteng<br>Kathu, Northern Cape, 8446</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h4>Phone Numbers</h4>
+                            <p>
+                                <a href="tel:0792377578">079 237 7578</a><br>
+                                <a href="tel:0790205067">079 020 5067</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h4>Email Address</h4>
+                            <p><a href="mailto:malakimonchusi@gmail.com">malakimonchusi@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="business-details">
+                        <h4>Business Details</h4>
+                        <div class="detail-item">
+                            <span class="detail-label">Company Registration:</span>
+                            <span class="detail-value">2023/512019/07</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">SARS Tax Number:</span>
+                            <span class="detail-value">9005221313</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">B-BBEE Status:</span>
+                            <span class="detail-value">Level 1 Contributor</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Ownership:</span>
+                            <span class="detail-value">100% Black Owned</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Female Ownership:</span>
+                            <span class="detail-value">51% Black Female</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service">
+                                <option value="">Select a service</option>
+                                <option value="mining">Core Mining Services</option>
+                                <option value="supply">Industrial Mining Supply</option>
+                                <option value="cleaning">Commercial & Industrial Cleaning</option>
+                                <option value="construction">Construction Services</option>
+                                <option value="paving">Paving and Flooring</option>
+                                <option value="plumbing">Plumbing Works</option>
+                                <option value="building">General Building Construction</option>
+                                <option value="horticultural">Horticultural Services</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" required placeholder="Please provide details about your project or inquiry..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Our Location</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div class="map-icon">🗺️</div>
+                    <h3>Map Location</h3>
+                    <p>We are located in Kathu, Northern Cape</p>
+                    <p><strong>Physical Address:</strong> House no: J82, Mapoteng, Kathu, 8447</p>
+                    <p>Interactive map can be integrated here with Google Maps or similar service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-contact">
+        <div class="container">
+            <h2 class="section-title">Quick Contact Options</h2>
+            <div class="quick-contact-grid">
+                <div class="quick-contact-card">
+                    <div class="quick-contact-icon">📞</div>
+                    <h3>Call Us</h3>
+                    <p>Speak directly with our team for immediate assistance</p>
+                    <a href="tel:0792377578" class="quick-contact-btn">Call Now</a>
+                </div>
+                
+                <div class="quick-contact-card">
+                    <div class="quick-contact-icon">✉️</div>
+                    <h3>Email Us</h3>
+                    <p>Send us an email and we'll respond within 24 hours</p>
+                    <a href="mailto:malakimonchusi@gmail.com" class="quick-contact-btn">Send Email</a>
+                </div>
+                
+                <div class="quick-contact-card">
+                    <div class="quick-contact-icon">💬</div>
+                    <h3>WhatsApp</h3>
+                    <p>Message us on WhatsApp for quick queries</p>
+                    <a href="https://wa.me/27792377578" class="quick-contact-btn" target="_blank">Message Us</a>
+                </div>
+                
+                <div class="quick-contact-card">
+                    <div class="quick-contact-icon">📅</div>
+                    <h3>Schedule Meeting</h3>
+                    <p>Book a consultation meeting with our experts</p>
+                    <a href="#contactForm" class="quick-contact-btn">Request Meeting</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <p>📍 House no: J82, Mapoteng, Kathu, 8447</p>
+                    <p>📮 P.O. Box, Kathu, 8446</p>
+                    <p>📱 079 237 7578 / 079 020 5067</p>
+                    <p>✉️ malakimonchusi@gmail.com</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Our Services</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Business Details</h4>
+                    <p>Reg: 2023/512019/07</p>
+                    <p>Tax: 9005221313</p>
+                    <p>B-BBEE: Level 1 Contributor</p>
+                    <p>135% Procurement Recognition</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MONCHUSI and KILELO Mining and Enterprise. All rights reserved.</p>
+                <p>Level 1 B-BBEE Contributor | 135% Procurement Recognition | 100% Black Owned | 51% Black Female Owned</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            
+            // Show success message
+            alert(`Thank you ${name}! Your message has been sent successfully. We will contact you at ${email} regarding your ${service ? service : 'inquiry'} soon.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(0, 51, 102, 1)';
+            } else {
+                nav.style.background = 'rgba(0, 51, 102, 0.95)';
+            }
+        });
+
+        // Add animation to contact items on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe contact items for animation
+        document.querySelectorAll('.contact-item, .quick-contact-card').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>3
