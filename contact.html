@@ -70,8 +70,8 @@
         /* Page Header */
         .page-header {
             height: 40vh;
-            background: linear-gradient(135deg, rgba(0, 51, 102, 0.9), rgba(0, 102, 204, 0.85)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23003366" width="1200" height="800"/><g fill="%23004080" opacity="0.3"><circle cx="200" cy="150" r="100"/><circle cx="900" cy="600" r="150"/><circle cx="1100" cy="200" r="80"/><circle cx="300" cy="700" r="120"/></g></svg>');
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.85), rgba(0, 102, 204, 0.8)), 
+                        url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -129,7 +129,16 @@
         /* Contact Main Section */
         .contact-main {
             padding: 6rem 0;
-            background: white;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.85), rgba(0, 102, 204, 0.8)), 
+                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .contact-main .section-title {
+            color: white;
         }
 
         .contact-content {
@@ -140,14 +149,16 @@
 
         /* Contact Information */
         .contact-info {
-            background: #f8f9fa;
+            background: rgba(255, 255, 255, 0.1);
             padding: 3rem;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .contact-info h3 {
-            color: #003366;
+            color: white;
             margin-bottom: 2rem;
             font-size: 1.8rem;
             border-bottom: 2px solid #FFA500;
@@ -176,24 +187,24 @@
         }
 
         .contact-details h4 {
-            color: #003366;
+            color: white;
             margin-bottom: 0.3rem;
             font-size: 1.2rem;
         }
 
         .contact-details p {
-            color: #666;
+            color: rgba(255, 255, 255, 0.9);
             line-height: 1.7;
         }
 
         .contact-details a {
-            color: #0066cc;
+            color: #FFA500;
             text-decoration: none;
             transition: color 0.3s;
         }
 
         .contact-details a:hover {
-            color: #FFA500;
+            color: white;
             text-decoration: underline;
         }
 
@@ -201,11 +212,11 @@
         .business-details {
             margin-top: 3rem;
             padding-top: 2rem;
-            border-top: 1px solid #ddd;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .business-details h4 {
-            color: #003366;
+            color: white;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
@@ -214,25 +225,27 @@
             display: flex;
             justify-content: space-between;
             padding: 0.7rem 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .detail-label {
             font-weight: 600;
-            color: #003366;
+            color: white;
         }
 
         .detail-value {
-            color: #555;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         /* Contact Form */
         .contact-form {
-            background: linear-gradient(135deg, #003366, #0066cc);
+            background: rgba(0, 0, 0, 0.5);
             padding: 3rem;
             border-radius: 15px;
             color: white;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .contact-form h3 {
@@ -297,8 +310,12 @@
         /* Map Section */
         .map-section {
             padding: 6rem 0;
-            background: linear-gradient(135deg, #003366, #0066cc);
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.85), rgba(0, 102, 204, 0.8)), 
+                        url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
             color: white;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .map-section .section-title {
@@ -310,21 +327,23 @@
         }
 
         .map-container {
-            background: white;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 15px 40px rgba(0,0,0,0.2);
             height: 400px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .map-placeholder {
             height: 100%;
-            background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+            background: rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #003366;
+            color: white;
             text-align: center;
             padding: 2rem;
         }
@@ -340,10 +359,24 @@
             font-size: 1.5rem;
         }
 
+        .map-placeholder p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.5rem;
+        }
+
         /* Quick Contact */
         .quick-contact {
             padding: 6rem 0;
-            background: white;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.85), rgba(0, 102, 204, 0.8)), 
+                        url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            color: white;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .quick-contact .section-title {
+            color: white;
         }
 
         .quick-contact-grid {
@@ -353,35 +386,38 @@
         }
 
         .quick-contact-card {
-            background: #f8f9fa;
+            background: rgba(255, 255, 255, 0.1);
             padding: 2.5rem;
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
             transition: all 0.3s;
-            border-top: 5px solid #003366;
+            border-top: 5px solid #FFA500;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .quick-contact-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
             border-top-color: #FFA500;
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .quick-contact-icon {
             font-size: 3rem;
             margin-bottom: 1.5rem;
-            color: #003366;
+            color: #FFA500;
         }
 
         .quick-contact-card h3 {
-            color: #003366;
+            color: white;
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
 
         .quick-contact-card p {
-            color: #666;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 1.5rem;
             line-height: 1.7;
         }
@@ -765,4 +801,4 @@
         });
     </script>
 </body>
-</html>3
+</html>
